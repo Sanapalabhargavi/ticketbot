@@ -3,6 +3,8 @@ import axios from 'axios'
 import Login from './Login'
 import MyTickets from './MyTickets'
 
+const BACKEND = 'https://backend-ciwfu9ksa-sanapalabhargavis-projects.vercel.app'
+
 const LANGS = {
   te: {
     greeting: 'నమస్కారం! 👋 Bus, Train, Movie tickets book cheyyadaniki help chestanu!',
@@ -71,7 +73,7 @@ function App() {
     setLoading(true)
 
     try {
-      const res = await axios.post('http://localhost:5000/chat',
+      const res = await axios.post(`${BACKEND}/chat`,
         { message: currentInput, language: lang },
         { headers: { 'x-session-id': SESSION_ID } }
       )
@@ -79,7 +81,6 @@ function App() {
       const reply = res.data.reply
       setMessages(prev => [...prev, { role: 'bot', text: reply }])
 
-      // Booking confirmed aite ticket save cheyyi
       if (reply.includes('Booking Confirmed') ||
         reply.includes('నిర్ధారించబడింది') ||
         reply.includes('पुष्टि')) {
