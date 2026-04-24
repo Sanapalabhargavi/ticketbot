@@ -8,6 +8,18 @@
     ],
     "routes": [
         {
+            "src": "/register",
+            "dest": "api/index.js"
+        },
+        {
+            "src": "/login",
+            "dest": "api/index.js"
+        },
+        {
+            "src": "/chat",
+            "dest": "api/index.js"
+        },
+        {
             "src": "/(.*)",
             "dest": "api/index.js"
         }
