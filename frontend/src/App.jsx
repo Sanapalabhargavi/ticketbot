@@ -3,7 +3,7 @@ import axios from 'axios'
 import Login from './Login'
 import MyTickets from './MyTickets'
 
-const BACKEND = 'https://backend-ciwfu9ksa-sanapalabhargavis-projects.vercel.app'
+const BACKEND = 'https://backend-delta-ten-61.vercel.app'
 
 const LANGS = {
   te: {
